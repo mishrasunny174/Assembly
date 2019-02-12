@@ -15,8 +15,7 @@ begin:  push 	rcx 		;pushing rcx to save it's value
 	mov 	rdx, length 	;length of message to write
 	syscall 		;calling system
 	pop 	rcx
-	dec 	rcx 	   	;dec counter
-	jnz 	begin       	;jump if not zero flag set
+	loop 	begin 		;now using single instruction to loop
 	mov 	rax, 0x3c   	;exit syscall number
 	mov 	rdi, 0x0    	;exit status
 	syscall 		;syscall
