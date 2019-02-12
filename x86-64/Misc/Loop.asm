@@ -1,14 +1,13 @@
 section  .data
 
-msg: 	db	'Hello, world!',0xa
-length: equ	$-msg
-
+msg: 		db	'Hello, world!',0xa
+length: 	equ	$-msg
 section  .text
 
 global  _start
 
 _start:
-	mov rbx, 0x5 	;loop counter
+	mov rbx, 0x10   ;initializing counter to 10
 begin:  mov rax, 0x1    ;write syscall number
 	mov rdi, 0x1 	;fd to write
 	mov rsi, msg 	;msg to write
