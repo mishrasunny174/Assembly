@@ -6,6 +6,7 @@
 hello db 'Hello, World',00ah,'$'
 
 .code
+.startup
 mov ax, @data
 mov ds, ax
 mov ah, 09h
