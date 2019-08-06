@@ -1,0 +1,21 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 0000FH 00010H _TEXT              CODE
+ 00010H 0001DH 0000EH _DATA              DATA
+ 00020H 0041FH 00400H STACK              STACK
+
+Detailed map of segments
+
+0000:0000 0010 C=CODE S=_TEXT G=(none) M=SOURCE\HELLO.ASM ACBP=48
+0001:0000 000E C=DATA S=_DATA G=DGROUP M=SOURCE\HELLO.ASM ACBP=48
+0002:0000 0400 C=STACK S=STACK G=DGROUP M=SOURCE\HELLO.ASM ACBP=74
+
+  Address         Publics by Name
+
+
+  Address         Publics by Value
+
+
+Program entry point at 0000:0000
+
