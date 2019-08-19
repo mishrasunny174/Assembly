@@ -1,9 +1,9 @@
 .model small
 
 .data
-num1 	dq 	11223344h				;first number
-num2	dq 	22334455h				;second number
-res	 	dd 	0				;result will be stored here
+num1 	dd 	11223344h				;first number
+num2	dd 	22334455h				;second number
+res	dq 	0					;result will be stored here
 
 .stack 1000h 						; declaring stack of size 1000h
 

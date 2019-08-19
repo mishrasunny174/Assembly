@@ -1,11 +1,11 @@
 .model small
 
 .data
-num1    dq      0ffffffffh; first number
-num2    dq      0ffffffffh; second number
-res	 	dd 	0; result will be stored here
+num1    dd      0ffffffffh				; first number
+num2    dd      0ffffffffh				; second number
+res	dq 	0					; result will be stored here
 
-.stack 1000h ; declaring stack of size 1000h
+.stack 1000h 						; declaring stack of size 1000h
 
 .code
 
