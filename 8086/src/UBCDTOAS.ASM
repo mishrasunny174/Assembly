@@ -3,19 +3,21 @@
 .stack 1000h
 
 .data
-num db 01,02,03,04
+num db 04,03,02,01
 res db 4 dup(0),'$'
 
 .code
 main proc stdcall
         xor ax, ax
-        mov si, 0
+        mov si, 3
+        mov di, 0
         mov cx, 4
 begin:
         mov al, byte ptr[num+si]
         add al, 30h
-        mov byte ptr[res+si], al
-        inc si
+        mov byte ptr[res+di], al
+        inc di
+        dec si
         loop begin
         mov ah, 09h
         lea dx, res
