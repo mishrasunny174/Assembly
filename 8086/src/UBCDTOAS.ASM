@@ -1,3 +1,4 @@
+; unpacked bcd to ascii
 .model small
 
 .stack 1000h
