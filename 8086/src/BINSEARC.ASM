@@ -63,9 +63,9 @@ loopagain:
 	mov al, byte ptr[@@query]
 	mov bl, byte ptr[@@mid]
 	lea bx, [di+bx]
-	cmp byte ptr[bx], al
-	jl less
-	jg more
+	cmp al, byte ptr[bx]
+	jb less
+	ja more
 	lea ax, founds
 	push ax
 	call prints
