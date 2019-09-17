@@ -48,6 +48,7 @@ linsearch proc stdcall
 	mov cx, [@@num]
 	mov al, byte ptr [@@query]
 	mov di,word ptr [@@array]
+	cld
 	repne scasb
 	je found
 	lea ax, notfounds
