@@ -11,7 +11,7 @@ mov ax, @data ;setting up ds segment
 mov ds, ax    ;setting up es segment
 mov es, ax
 mov ah, 09h
-mov dx, offset hello
+lea dx, hello
 int 21h
 .exit
 end start
