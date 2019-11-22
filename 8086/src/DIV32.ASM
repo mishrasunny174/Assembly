@@ -12,10 +12,10 @@ remain dw 0
 main proc stdcall
 	mov ax, word ptr[num1+2]
 	div word ptr[num2]
-	mov byte ptr[numer+3], al
+	mov word ptr[numer+2], ax
 	mov ax, word ptr[num1]
 	div word ptr[num2]
-	mov word ptr[numer+1], ax
+	mov word ptr[numer], ax
 	mov word ptr[remain], dx
 	int 3
 	mov al, 0
