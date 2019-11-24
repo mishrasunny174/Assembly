@@ -1,11 +1,11 @@
 .model small
 
 .data
-array db 0,1,2,3,4,5,6,7,8,9
-query db 5
-founds db 'Found',0ah,'$'
-nfounds db 'Not Found',0ah,'$'
-
+array db 0,1,2,3,4,5,6,7,9
+querys db 0ah,'Enter integer (0-9) to be searched for: $'
+founds db 0ah,'Found$'
+nfounds db 0ah,'Not Found$'
+arrsize db 9
 .stack 1000h
 
 .code
@@ -19,9 +19,18 @@ prints proc stdcall
 prints endp
 
 main proc stdcall
-        local @@mid:word, @@start:word, @@end:word
+        local @@mid:byte, @@start:byte, @@end:byte, @@query:byte
+        lea ax, querys
+        push ax
+        call prints
+        mov ah, 01h
+        int 21h
+        and al, 0fh
+        mov byte ptr[@@query], al
         mov byte ptr[@@start], 0
-        mov byte ptr[@@end], 9
+        mov al, byte ptr[arrsize]
+        sub al, 1
+        mov byte ptr[@@end], al
         mov word ptr[@@mid],0
         lea di, array
 again:
@@ -31,10 +40,14 @@ again:
         add al, byte ptr[@@start]
         mov bl, 2
         div bl
+        cmp ah, 1
+        jne skip
+        add al, 1
+skip:
         mov byte ptr[@@mid], al
         cmp al, byte ptr[@@end]
         jg notfound
-        mov al, byte ptr[query]
+        mov al, byte ptr[@@query]
         mov bl, byte ptr[@@mid]
         cmp al, byte ptr [di+bx]
         jl sml
