@@ -28,6 +28,6 @@ start:
         xor ax,ax
         sbb ax,0
         mov byte ptr res+4, al
-        mov ah, 3ch
+        mov ah, 4ch
         int 21h
 end start

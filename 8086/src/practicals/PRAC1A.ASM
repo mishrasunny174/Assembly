@@ -33,7 +33,7 @@ start:
         adc dx, 0
         mov word ptr res+4, cx
         mov word ptr res+6, dx
-        mov ah, 3ch
+        mov ah, 4ch
         int 21h
 end start
 

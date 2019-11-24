@@ -21,6 +21,6 @@ start:
         div word ptr num2
         mov word ptr numer, ax
         mov word ptr rem, dx
-        mov ah, 3ch
+        mov ah, 4ch
         int 21h
 end start
